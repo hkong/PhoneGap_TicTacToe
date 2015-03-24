@@ -23,16 +23,20 @@
 				});
 				
 				$(".tg-031e").click( function() {
-					navigator.vibrate(250);
 					userClick( "#" + this.id );
 				})
 				
 				var userClick = function( loc )
 				{
 					if ( currentTurn % 2 )
+					{
+						navigator.vibrate(150);
 						setChar( loc, "X" );
-					else
+					}
+					else {
+						navigator.vibrate(50);
 						setChar( loc, "O");
+					}
 					currentTurn++;
 				}
 			
