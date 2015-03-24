@@ -23,8 +23,8 @@
 				});
 				
 				$(".tg-031e").click( function() {
+					navigator.vibrate(250);
 					userClick( "#" + this.id );
-					navigator.vibrate(1000);
 				})
 				
 				var userClick = function( loc )
