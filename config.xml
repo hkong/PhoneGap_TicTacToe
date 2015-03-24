@@ -35,8 +35,8 @@
 		<param name="android-package" value="org.apache.cordova.CameraLauncher" />
 	</feature>
 
-	<gap:plugin name="org.apache.cordova.camera" version="0.3.6" />
-	<gap:plugin name="org.apache.cordova.media" version="0.2.16" />
+	<gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
+	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
 
-	<gap:plugin name="org.apache.cordova.vibration" version="0.3.13" />
+	<gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
 </widget>
