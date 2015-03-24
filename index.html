@@ -4,6 +4,7 @@
 		<title>PhoneGap Tic Tac Toe</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="phonegap.js"></script>
 		<script>
 			$(document).ready(function()
 			{
@@ -22,9 +23,8 @@
 				});
 				
 				$(".tg-031e").click( function() {
-					//$("#"+this.id).text("X");
 					userClick( "#" + this.id );
-					console.log(this.id);
+					navigator.vibrate(500);
 				})
 				
 				var userClick = function( loc )
