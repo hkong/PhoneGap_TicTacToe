@@ -3,7 +3,48 @@
 	<head>
 		<title>PhoneGap Tic Tac Toe</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function()
+			{
+				var currentTurn = 0;
+				
+				$("#newGame").click(function(){
+					setChar( "#aa", "\xA0" );
+					setChar( "#ab", "\xA0" );
+					setChar( "#ac", "\xA0" );
+					setChar( "#ba", "\xA0" );
+					setChar( "#bb", "\xA0" );
+					setChar( "#bc", "\xA0" );
+					setChar( "#ca", "\xA0" );
+					setChar( "#cb", "\xA0" );
+					setChar( "#cc", "\xA0" );
+				});
+				
+				$(".tg-031e").click( function() {
+					//$("#"+this.id).text("X");
+					userClick( "#" + this.id );
+					console.log(this.id);
+				})
+				
+				var userClick = function( loc )
+				{
+					if ( currentTurn % 2 )
+						setChar( loc, "X" );
+					else
+						setChar( loc, "O");
+					currentTurn++;
+				}
+			
+				var setChar = function( loc, str ) {
+					$(loc).text(str);
+				}
+						
+			});
+			
+			
+		</script>
+
 	</head>
 
 	<body>
@@ -12,8 +53,8 @@
 		</div>
 		
 		<h2>Controls</h2>
+		<div class="button" id="newGame">New Game</div>
 		<ul>
-			<li>New Game</li>
 			<li>Scoreboard</li>
 		</ul>
 		
@@ -30,19 +71,19 @@
 		
 		<table class="play-area tg">
 		  <tr>
-			<td class="tg-031e">&nbsp;</td>
-			<td class="tg-031e">&nbsp;</td>
-			<td class="tg-031e">&nbsp;</td>
+			<td class="tg-031e" id="aa">&nbsp;</td>
+			<td class="tg-031e" id="ab">&nbsp;</td>
+			<td class="tg-031e" id="ac">&nbsp;</td>
 		  </tr>
 		  <tr>
-			<td class="tg-031e">&nbsp;</td>
-			<td class="tg-031e">&nbsp;</td>
-			<td class="tg-031e">&nbsp;</td>
+			<td class="tg-031e" id="ba">&nbsp;</td>
+			<td class="tg-031e" id="bb">&nbsp;</td>
+			<td class="tg-031e" id="bc">&nbsp;</td>
 		  </tr>
 		  <tr>
-			<td class="tg-031e">&nbsp;</td>
-			<td class="tg-031e">&nbsp;</td>
-			<td class="tg-031e">&nbsp;</td>
+			<td class="tg-031e" id="ca">&nbsp;</td>
+			<td class="tg-031e" id="cb">&nbsp;</td>
+			<td class="tg-031e" id="cc">&nbsp;</td>
 		  </tr>
 		</table>
 		
