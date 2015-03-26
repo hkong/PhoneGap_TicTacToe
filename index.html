@@ -28,20 +28,28 @@
 				
 				var userClick = function( loc )
 				{
-					if ( currentTurn % 2 )
+					if ( $(loc).html() == "&nbsp;" )	// because as html, it's &nbsp;
 					{
-						navigator.vibrate(150);
-						setChar( loc, "X" );
+						if ( currentTurn % 2 )
+						{
+							navigator.vibrate(150);
+							setChar( loc, "X" );
+						}
+						else {
+							navigator.vibrate(50);
+							setChar( loc, "O");
+						}
+						currentTurn++;
 					}
-					else {
-						navigator.vibrate(50);
-						setChar( loc, "O");
-					}
-					currentTurn++;
 				}
 			
 				var setChar = function( loc, str ) {
 					$(loc).text(str);
+				}
+
+				var hasWon = function()
+				{
+
 				}
 						
 			});
